@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-service/goods-api/goods-api.iml" filepath="$PROJECT_DIR$/youxuan-goods-service/goods-api/goods-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/goods-center-api/goods-center-api.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/goods-center-api/goods-center-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/goods-center-service/goods-center-service.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/goods-center-service/goods-center-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-service/goods-service/goods-service.iml" filepath="$PROJECT_DIR$/youxuan-goods-service/goods-service/goods-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-order-service/order-api/order-api.iml" filepath="$PROJECT_DIR$/youxuan-order-service/order-api/order-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-order-service/order-service/order-service.iml" filepath="$PROJECT_DIR$/youxuan-order-service/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-pay-service/pay-api/pay-api.iml" filepath="$PROJECT_DIR$/youxuan-pay-service/pay-api/pay-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-pay-service/pay-service/pay-service.iml" filepath="$PROJECT_DIR$/youxuan-pay-service/pay-service/pay-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-search-service/search-service/search-service.iml" filepath="$PROJECT_DIR$/youxuan-search-service/search-service/search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-search-service/serarch-api/serarch-api.iml" filepath="$PROJECT_DIR$/youxuan-search-service/serarch-api/serarch-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-user-center/user-center-api/user-center-api.iml" filepath="$PROJECT_DIR$/youxuan-user-center/user-center-api/user-center-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-user-center/user-center-service/user-center-service.iml" filepath="$PROJECT_DIR$/youxuan-user-center/user-center-service/user-center-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/youxuan.iml" filepath="$PROJECT_DIR$/.idea/youxuan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-common-center/youxuan-common-center.iml" filepath="$PROJECT_DIR$/youxuan-common-center/youxuan-common-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-eureka-service/youxuan-eureka-service.iml" filepath="$PROJECT_DIR$/youxuan-eureka-service/youxuan-eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/youxuan-goods-center.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/youxuan-goods-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-goods-service/youxuan-goods-service.iml" filepath="$PROJECT_DIR$/youxuan-goods-service/youxuan-goods-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-order-service/youxuan-order-service.iml" filepath="$PROJECT_DIR$/youxuan-order-service/youxuan-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-pay-service/youxuan-pay-service.iml" filepath="$PROJECT_DIR$/youxuan-pay-service/youxuan-pay-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-search-service/youxuan-search-service.iml" filepath="$PROJECT_DIR$/youxuan-search-service/youxuan-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-system-center/youxuan-system-center.iml" filepath="$PROJECT_DIR$/youxuan-system-center/youxuan-system-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-user-center/youxuan-user-center.iml" filepath="$PROJECT_DIR$/youxuan-user-center/youxuan-user-center.iml" />
+    </modules>
+  </component>
+</project>

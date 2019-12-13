@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/youxuan-search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-search-service/serarch-api/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-search-service/search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-service/goods-api/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-service/goods-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-order-service/order-api/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-order-service/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-pay-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-pay-service/pay-api/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-pay-service/pay-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-center/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-center/goods-center-api/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-goods-center/goods-center-service/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-user-center/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-common-center/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-system-center/pom.xml" />
+        <option value="$PROJECT_DIR$/youxuan-eureka-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="youxuan-order-service" />
+        <module name="pay-api" />
+        <module name="goods-service" />
+        <module name="goods-center-service" />
+        <module name="youxuan-system-center" />
+        <module name="pay-service" />
+        <module name="serarch-api" />
+        <module name="youxuan-goods-service" />
+        <module name="youxuan-common-center" />
+        <module name="goods-api" />
+        <module name="youxuan-search-service" />
+        <module name="order-service" />
+        <module name="user-center-api" />
+        <module name="youxuan-pay-service" />
+        <module name="youxuan-eureka-service" />
+        <module name="goods-center-api" />
+        <module name="user-center-service" />
+        <module name="search-service" />
+        <module name="order-api" />
+        <module name="youxuan-goods-center" />
+        <module name="youxuan-user-center" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="goods-api" target="1.5" />
+      <module name="goods-center-api" target="1.5" />
+      <module name="goods-center-service" target="1.8" />
+      <module name="goods-service" target="1.8" />
+      <module name="order-api" target="1.5" />
+      <module name="order-service" target="1.8" />
+      <module name="pay-api" target="1.5" />
+      <module name="pay-service" target="1.8" />
+      <module name="search-service" target="1.8" />
+      <module name="serarch-api" target="1.5" />
+      <module name="user-center-api" target="1.5" />
+      <module name="user-center-service" target="1.8" />
+      <module name="youxuan-common-center" target="1.5" />
+      <module name="youxuan-eureka-service" target="1.5" />
+      <module name="youxuan-goods-center" target="1.5" />
+      <module name="youxuan-goods-service" target="1.5" />
+      <module name="youxuan-order-service" target="1.5" />
+      <module name="youxuan-pay-service" target="1.5" />
+      <module name="youxuan-search-service" target="1.5" />
+      <module name="youxuan-system-center" target="1.5" />
+      <module name="youxuan-user-center" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="goods-center-service" options="-parameters" />
+      <module name="goods-service" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="pay-service" options="-parameters" />
+      <module name="search-service" options="-parameters" />
+      <module name="user-center-service" options="-parameters" />
+    </option>
+  </component>
+</project>
