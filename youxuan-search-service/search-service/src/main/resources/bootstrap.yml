@@ -1,0 +1,31 @@
+info:
+  app:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+
+server:
+  port: 9102
+spring:
+  application:
+    name: youxuan-search-service
+  cloud:
+    config:
+      discovery:
+        service-id: youxuan-config-service
+        enabled: true
+      label: master
+      # name: youxuan-search-service  #不同环境此项目的配置文件名称
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9001/eureka/
+      # defaultZone: http://127.0.0.1:9001/eureka/,http://127.0.0.1:9002/eureka/,http://127.0.0.1:9003/eureka/
+
+#mybatis-plus:
+#    configuration:
+#      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

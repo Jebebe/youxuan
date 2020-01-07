@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-one/eureka-register-service-one.iml" filepath="$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-one/eureka-register-service-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-three/eureka-register-service-three.iml" filepath="$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-three/eureka-register-service-three.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-two/eureka-register-service-two.iml" filepath="$PROJECT_DIR$/youxuan-eureka-service/eureka-register-service-two/eureka-register-service-two.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-goods-service/goods-api/goods-api.iml" filepath="$PROJECT_DIR$/youxuan-goods-service/goods-api/goods-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/goods-center-api/goods-center-api.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/goods-center-api/goods-center-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/goods-center-service/goods-center-service.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/goods-center-service/goods-center-service.iml" />
@@ -16,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/youxuan-user-center/user-center-service/user-center-service.iml" filepath="$PROJECT_DIR$/youxuan-user-center/user-center-service/user-center-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/youxuan.iml" filepath="$PROJECT_DIR$/.idea/youxuan.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-common-center/youxuan-common-center.iml" filepath="$PROJECT_DIR$/youxuan-common-center/youxuan-common-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/youxuan-config-service/youxuan-config-service.iml" filepath="$PROJECT_DIR$/youxuan-config-service/youxuan-config-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-eureka-service/youxuan-eureka-service.iml" filepath="$PROJECT_DIR$/youxuan-eureka-service/youxuan-eureka-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-goods-center/youxuan-goods-center.iml" filepath="$PROJECT_DIR$/youxuan-goods-center/youxuan-goods-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/youxuan-goods-service/youxuan-goods-service.iml" filepath="$PROJECT_DIR$/youxuan-goods-service/youxuan-goods-service.iml" />

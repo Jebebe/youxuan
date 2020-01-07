@@ -10,18 +10,21 @@
         <module name="pay-api" />
         <module name="goods-service" />
         <module name="goods-center-service" />
+        <module name="eureka-register-service-three" />
         <module name="youxuan-system-center" />
         <module name="pay-service" />
         <module name="serarch-api" />
         <module name="youxuan-goods-service" />
         <module name="youxuan-common-center" />
+        <module name="youxuan-config-service" />
+        <module name="eureka-register-service-one" />
         <module name="goods-api" />
         <module name="youxuan-search-service" />
         <module name="order-service" />
         <module name="user-center-api" />
         <module name="youxuan-pay-service" />
-        <module name="youxuan-eureka-service" />
         <module name="goods-center-api" />
+        <module name="eureka-register-service-two" />
         <module name="user-center-service" />
         <module name="search-service" />
         <module name="order-api" />
@@ -30,6 +33,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="eureka-register-service-one" target="1.8" />
+      <module name="eureka-register-service-three" target="1.8" />
+      <module name="eureka-register-service-two" target="1.8" />
       <module name="goods-api" target="1.5" />
       <module name="goods-center-api" target="1.5" />
       <module name="goods-center-service" target="1.8" />
@@ -42,8 +48,9 @@
       <module name="serarch-api" target="1.5" />
       <module name="user-center-api" target="1.5" />
       <module name="user-center-service" target="1.8" />
-      <module name="youxuan-common-center" target="1.5" />
-      <module name="youxuan-eureka-service" target="1.5" />
+      <module name="youxuan-common-center" target="1.8" />
+      <module name="youxuan-config-service" target="1.8" />
+      <module name="youxuan-eureka-service" target="1.8" />
       <module name="youxuan-goods-center" target="1.5" />
       <module name="youxuan-goods-service" target="1.5" />
       <module name="youxuan-order-service" target="1.5" />

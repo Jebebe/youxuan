@@ -15,8 +15,43 @@
     <name>search-service</name>
     <description>youxuan搜索服务</description>
 
-
     <dependencies>
+        <dependency>
+            <groupId>com.youxuan</groupId>
+            <artifactId>youxuan-common-center</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.youxuan</groupId>
+            <artifactId>goods-center-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.youxuan</groupId>
+            <artifactId>goods-center-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.youxuan</groupId>
+            <artifactId>serarch-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 此处要依赖Spring的版本，否则会报错 -->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+
     </dependencies>
 
 

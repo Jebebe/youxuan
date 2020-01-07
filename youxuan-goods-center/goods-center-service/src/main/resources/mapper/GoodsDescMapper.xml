@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youxuan.goods.center.mapper.GoodsDescMapper">
+
+    <resultMap id="BaseResultMap" type="com.youxuan.goods.center.entity.GoodsDesc">
+        <id column="goods_id" jdbcType="BIGINT" property="goodsId"/>
+        <result column="introductions" jdbcType="VARCHAR" property="introductions"/>
+        <result column="specification_items" jdbcType="VARCHAR" property="specificationItems"/>
+        <result column="custom_attributes_items" jdbcType="VARCHAR" property="customAttributesItems"/>
+        <result column="item_images" jdbcType="VARCHAR" property="itemImages"/>
+        <result column="packages" jdbcType="VARCHAR" property="packages"/>
+        <result column="sale_service" jdbcType="VARCHAR" property="saleService"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        goods_id, introductions, specification_items, custom_attributes_items, item_images,
+        packages, sale_service
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from goods_desc
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from goods_desc
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.youxuan.goods.center.entity.GoodsDesc" useGeneratedKeys="true">
+        insert into goods_desc (introductions, specification_items,
+          custom_attributes_items, item_images, packages,
+          sale_service)
+        values (#{introductions,jdbcType=VARCHAR}, #{specificationItems,jdbcType=VARCHAR},
+          #{customAttributesItems,jdbcType=VARCHAR}, #{itemImages,jdbcType=VARCHAR}, #{packages,jdbcType=VARCHAR},
+          #{saleService,jdbcType=VARCHAR})
+    </insert>
+
+    <insert id="insertSelective" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.youxuan.goods.center.entity.GoodsDesc" useGeneratedKeys="true">
+        insert into goods_desc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="introductions != null">
+                introductions,
+            </if>
+            <if test="specificationItems != null">
+                specification_items,
+            </if>
+            <if test="customAttributesItems != null">
+                custom_attributes_items,
+            </if>
+            <if test="itemImages != null">
+                item_images,
+            </if>
+            <if test="packages != null">
+                packages,
+            </if>
+            <if test="saleService != null">
+                sale_service,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="introductions != null">
+                #{introductions,jdbcType=VARCHAR},
+            </if>
+            <if test="specificationItems != null">
+                #{specificationItems,jdbcType=VARCHAR},
+            </if>
+            <if test="customAttributesItems != null">
+                #{customAttributesItems,jdbcType=VARCHAR},
+            </if>
+            <if test="itemImages != null">
+                #{itemImages,jdbcType=VARCHAR},
+            </if>
+            <if test="packages != null">
+                #{packages,jdbcType=VARCHAR},
+            </if>
+            <if test="saleService != null">
+                #{saleService,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.youxuan.goods.center.entity.GoodsDesc">
+        update goods_desc
+        <set>
+            <if test="introductions != null">
+                introductions = #{introductions,jdbcType=VARCHAR},
+            </if>
+            <if test="specificationItems != null">
+                specification_items = #{specificationItems,jdbcType=VARCHAR},
+            </if>
+            <if test="customAttributesItems != null">
+                custom_attributes_items = #{customAttributesItems,jdbcType=VARCHAR},
+            </if>
+            <if test="itemImages != null">
+                item_images = #{itemImages,jdbcType=VARCHAR},
+            </if>
+            <if test="packages != null">
+                packages = #{packages,jdbcType=VARCHAR},
+            </if>
+            <if test="saleService != null">
+                sale_service = #{saleService,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.youxuan.goods.center.entity.GoodsDesc">
+        update goods_desc
+        set introductions = #{introductions,jdbcType=VARCHAR},
+          specification_items = #{specificationItems,jdbcType=VARCHAR},
+          custom_attributes_items = #{customAttributesItems,jdbcType=VARCHAR},
+          item_images = #{itemImages,jdbcType=VARCHAR},
+          packages = #{packages,jdbcType=VARCHAR},
+          sale_service = #{saleService,jdbcType=VARCHAR}
+        where goods_id = #{goodsId,jdbcType=BIGINT}
+    </update>
+</mapper>

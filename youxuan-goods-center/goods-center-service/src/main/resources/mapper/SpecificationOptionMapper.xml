@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youxuan.goods.center.mapper.SpecificationOptionMapper">
+
+    <resultMap id="BaseResultMap" type="com.youxuan.goods.center.entity.SpecificationOption">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="option_name" jdbcType="VARCHAR" property="optionName"/>
+        <result column="spec_id" jdbcType="BIGINT" property="specId"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      id, option_name, spec_id, sort, created_time, updated_time, `status`, created_by,
+      updated_by, is_deleted
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from specification_option
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+      delete from specification_option
+      where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.SpecificationOption" useGeneratedKeys="true">
+      insert into specification_option (option_name, spec_id, sort,
+        created_time, updated_time, `status`,
+        created_by, updated_by, is_deleted
+        )
+      values (#{optionName,jdbcType=VARCHAR}, #{specId,jdbcType=BIGINT}, #{sort,jdbcType=INTEGER},
+        #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER},
+        #{createdBy,jdbcType=BIGINT}, #{updatedBy,jdbcType=BIGINT}, #{isDeleted,jdbcType=BIT}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.SpecificationOption" useGeneratedKeys="true">
+        insert into specification_option
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="optionName != null">
+                option_name,
+            </if>
+            <if test="specId != null">
+                spec_id,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="createdTime != null">
+                created_time,
+            </if>
+            <if test="updatedTime != null">
+                updated_time,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="createdBy != null">
+                created_by,
+            </if>
+            <if test="updatedBy != null">
+                updated_by,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="optionName != null">
+                #{optionName,jdbcType=VARCHAR},
+            </if>
+            <if test="specId != null">
+                #{specId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="createdTime != null">
+                #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createdBy != null">
+                #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.youxuan.goods.center.entity.SpecificationOption">
+        update specification_option
+        <set>
+            <if test="optionName != null">
+                option_name = #{optionName,jdbcType=VARCHAR},
+            </if>
+            <if test="specId != null">
+                spec_id = #{specId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createdBy != null">
+                created_by = #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                updated_by = #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.youxuan.goods.center.entity.SpecificationOption">
+      update specification_option
+      set option_name = #{optionName,jdbcType=VARCHAR},
+        spec_id = #{specId,jdbcType=BIGINT},
+        sort = #{sort,jdbcType=INTEGER},
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+        `status` = #{status,jdbcType=INTEGER},
+        created_by = #{createdBy,jdbcType=BIGINT},
+        updated_by = #{updatedBy,jdbcType=BIGINT},
+        is_deleted = #{isDeleted,jdbcType=BIT}
+      where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectSpecOptionsBySpecId" resultMap="BaseResultMap">
+        select id, option_name, spec_id, sort
+        from specification_option
+        where status=1 and is_deleted=0
+        <if test="specId != null">
+            and spec_id = #{specId}
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: youxuan-config-service
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Jebebe/config-dev
+          username:   #\u79C1\u6709\u5E93\u9700\u8981\u914D\u7F6E\u7528\u6237\u540D&\u5BC6\u7801
+          password:
+          basedir: E:/JAR/basedir/
+      label: master
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9001/eureka/

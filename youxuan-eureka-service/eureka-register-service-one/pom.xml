@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>youxuan-eureka-service</artifactId>
+        <groupId>com.youxuan</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>eureka-register-service-one</artifactId>
+    <packaging>jar</packaging>
+    <name>eureka-register-service-one</name>
+    <description>Eureka注册服务1</description>
+
+    <build>
+        <finalName>eureka-register-service-one</finalName>
+    </build>
+</project>

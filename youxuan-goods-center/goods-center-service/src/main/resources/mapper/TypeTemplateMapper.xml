@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youxuan.goods.center.mapper.TypeTemplateMapper">
+
+    <resultMap id="BaseResultMap" type="com.youxuan.goods.center.entity.TypeTemplate">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName"/>
+        <result column="spec_ids" jdbcType="VARCHAR" property="specIds"/>
+        <result column="brand_ids" jdbcType="VARCHAR" property="brandIds"/>
+        <result column="custom_attribute_items" jdbcType="VARCHAR" property="customAttributeItems"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      id, category_name, spec_ids, brand_ids, custom_attribute_items, `status`, created_time,
+      updated_time, created_by, updated_by, is_deleted
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from type_template
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+      delete from type_template
+      where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.TypeTemplate" useGeneratedKeys="true">
+      insert into type_template (category_name, spec_ids, brand_ids,
+        custom_attribute_items, `status`, created_time,
+        updated_time, created_by, updated_by,
+        is_deleted)
+      values (#{categoryName,jdbcType=VARCHAR}, #{specIds,jdbcType=VARCHAR}, #{brandIds,jdbcType=VARCHAR},
+        #{customAttributeItems,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createdTime,jdbcType=TIMESTAMP},
+        #{updatedTime,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=BIGINT}, #{updatedBy,jdbcType=BIGINT},
+        #{isDeleted,jdbcType=BIT})
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.TypeTemplate" useGeneratedKeys="true">
+        insert into type_template
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="categoryName != null">
+                category_name,
+            </if>
+            <if test="specIds != null">
+                spec_ids,
+            </if>
+            <if test="brandIds != null">
+                brand_ids,
+            </if>
+            <if test="customAttributeItems != null">
+                custom_attribute_items,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="createdTime != null">
+                created_time,
+            </if>
+            <if test="updatedTime != null">
+                updated_time,
+            </if>
+            <if test="createdBy != null">
+                created_by,
+            </if>
+            <if test="updatedBy != null">
+                updated_by,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="categoryName != null">
+                #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="specIds != null">
+                #{specIds,jdbcType=VARCHAR},
+            </if>
+            <if test="brandIds != null">
+                #{brandIds,jdbcType=VARCHAR},
+            </if>
+            <if test="customAttributeItems != null">
+                #{customAttributeItems,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createdTime != null">
+                #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createdBy != null">
+                #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.youxuan.goods.center.entity.TypeTemplate">
+        update type_template
+        <set>
+            <if test="categoryName != null">
+                category_name = #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="specIds != null">
+                spec_ids = #{specIds,jdbcType=VARCHAR},
+            </if>
+            <if test="brandIds != null">
+                brand_ids = #{brandIds,jdbcType=VARCHAR},
+            </if>
+            <if test="customAttributeItems != null">
+                custom_attribute_items = #{customAttributeItems,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createdBy != null">
+                created_by = #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                updated_by = #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.youxuan.goods.center.entity.TypeTemplate">
+      update type_template
+      set category_name = #{categoryName,jdbcType=VARCHAR},
+        spec_ids = #{specIds,jdbcType=VARCHAR},
+        brand_ids = #{brandIds,jdbcType=VARCHAR},
+        custom_attribute_items = #{customAttributeItems,jdbcType=VARCHAR},
+        `status` = #{status,jdbcType=INTEGER},
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+        created_by = #{createdBy,jdbcType=BIGINT},
+        updated_by = #{updatedBy,jdbcType=BIGINT},
+        is_deleted = #{isDeleted,jdbcType=BIT}
+      where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectTypeTempList" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from type_template
+        where status=1 and is_deleted=0
+    </select>
+
+</mapper>

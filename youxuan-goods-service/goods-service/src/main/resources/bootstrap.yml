@@ -1,0 +1,30 @@
+info:
+  app:
+    name: "@project.name@"
+    description: "@project.description@"
+    version: "@project.version@"
+
+server:
+  port: 9104
+spring:
+  application:
+    name: youxuan-goods-service
+  cloud:
+    config:
+      discovery:
+        service-id: youxuan-config-service
+        enabled: true
+      label: master
+      name: youxuan-goods-service   #配置中心配置文件名称
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9001/eureka/
+
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

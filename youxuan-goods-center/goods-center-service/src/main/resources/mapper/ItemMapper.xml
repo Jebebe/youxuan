@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youxuan.goods.center.mapper.ItemMapper">
+
+    <resultMap id="BaseResultMap" type="com.youxuan.goods.center.entity.Item">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="sell_point" jdbcType="VARCHAR" property="sellPoint"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="stock_count" jdbcType="INTEGER" property="stockCount"/>
+        <result column="num" jdbcType="INTEGER" property="num"/>
+        <result column="bar_code" jdbcType="VARCHAR" property="barCode"/>
+        <result column="image_url" jdbcType="VARCHAR" property="imageUrl"/>
+        <result column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="item_sn" jdbcType="VARCHAR" property="itemSn"/>
+        <result column="cost_price" jdbcType="DECIMAL" property="costPrice"/>
+        <result column="market_price" jdbcType="DECIMAL" property="marketPrice"/>
+        <result column="is_default" jdbcType="BIT" property="isDefault"/>
+        <result column="goods_id" jdbcType="BIGINT" property="goodsId"/>
+        <result column="seller_id" jdbcType="VARCHAR" property="sellerId"/>
+        <result column="cart_thumbnail_url" jdbcType="VARCHAR" property="cartThumbnailUrl"/>
+        <result column="brand_name" jdbcType="VARCHAR" property="brandName"/>
+        <result column="spec_names" jdbcType="VARCHAR" property="specNames"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+      id, title, sell_point, price, stock_count, num, bar_code, image_url, category_id,
+      category_name, `status`, item_sn, cost_price, market_price, is_default, goods_id,
+      seller_id, cart_thumbnail_url, brand_name, spec_names, created_time, updated_time,
+      created_by, updated_by, is_deleted
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from item
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+      delete from item
+      where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.Item" useGeneratedKeys="true">
+      insert into item (title, sell_point, price,
+        stock_count, num, bar_code,
+        image_url, category_id, category_name,
+        `status`, item_sn, cost_price,
+        market_price, is_default, goods_id,
+        seller_id, cart_thumbnail_url, brand_name,
+        spec_names, created_time, updated_time,
+        created_by, updated_by, is_deleted
+        )
+      values (#{title,jdbcType=VARCHAR}, #{sellPoint,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL},
+        #{stockCount,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, #{barCode,jdbcType=VARCHAR},
+        #{imageUrl,jdbcType=VARCHAR}, #{categoryId,jdbcType=BIGINT}, #{categoryName,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER}, #{itemSn,jdbcType=VARCHAR}, #{costPrice,jdbcType=DECIMAL},
+        #{marketPrice,jdbcType=DECIMAL}, #{isDefault,jdbcType=BIT}, #{goodsId,jdbcType=BIGINT},
+        #{sellerId,jdbcType=VARCHAR}, #{cartThumbnailUrl,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR},
+        #{specNames,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP},
+        #{createdBy,jdbcType=BIGINT}, #{updatedBy,jdbcType=BIGINT}, #{isDeleted,jdbcType=BIT}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.youxuan.goods.center.entity.Item" useGeneratedKeys="true">
+        insert into item
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                title,
+            </if>
+            <if test="sellPoint != null">
+                sell_point,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="stockCount != null">
+                stock_count,
+            </if>
+            <if test="num != null">
+                num,
+            </if>
+            <if test="barCode != null">
+                bar_code,
+            </if>
+            <if test="imageUrl != null">
+                image_url,
+            </if>
+            <if test="categoryId != null">
+                category_id,
+            </if>
+            <if test="categoryName != null">
+                category_name,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="itemSn != null">
+                item_sn,
+            </if>
+            <if test="costPrice != null">
+                cost_price,
+            </if>
+            <if test="marketPrice != null">
+                market_price,
+            </if>
+            <if test="isDefault != null">
+                is_default,
+            </if>
+            <if test="goodsId != null">
+                goods_id,
+            </if>
+            <if test="sellerId != null">
+                seller_id,
+            </if>
+            <if test="cartThumbnailUrl != null">
+                cart_thumbnail_url,
+            </if>
+            <if test="brandName != null">
+                brand_name,
+            </if>
+            <if test="specNames != null">
+                spec_names,
+            </if>
+            <if test="createdTime != null">
+                created_time,
+            </if>
+            <if test="updatedTime != null">
+                updated_time,
+            </if>
+            <if test="createdBy != null">
+                created_by,
+            </if>
+            <if test="updatedBy != null">
+                updated_by,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="sellPoint != null">
+                #{sellPoint,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="stockCount != null">
+                #{stockCount,jdbcType=INTEGER},
+            </if>
+            <if test="num != null">
+                #{num,jdbcType=INTEGER},
+            </if>
+            <if test="barCode != null">
+                #{barCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imageUrl != null">
+                #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="categoryId != null">
+                #{categoryId,jdbcType=BIGINT},
+            </if>
+            <if test="categoryName != null">
+                #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="itemSn != null">
+                #{itemSn,jdbcType=VARCHAR},
+            </if>
+            <if test="costPrice != null">
+                #{costPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="marketPrice != null">
+                #{marketPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="isDefault != null">
+                #{isDefault,jdbcType=BIT},
+            </if>
+            <if test="goodsId != null">
+                #{goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="sellerId != null">
+                #{sellerId,jdbcType=VARCHAR},
+            </if>
+            <if test="cartThumbnailUrl != null">
+                #{cartThumbnailUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="brandName != null">
+                #{brandName,jdbcType=VARCHAR},
+            </if>
+            <if test="specNames != null">
+                #{specNames,jdbcType=VARCHAR},
+            </if>
+            <if test="createdTime != null">
+                #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createdBy != null">
+                #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.youxuan.goods.center.entity.Item">
+        update item
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="sellPoint != null">
+                sell_point = #{sellPoint,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="stockCount != null">
+                stock_count = #{stockCount,jdbcType=INTEGER},
+            </if>
+            <if test="num != null">
+                num = #{num,jdbcType=INTEGER},
+            </if>
+            <if test="barCode != null">
+                bar_code = #{barCode,jdbcType=VARCHAR},
+            </if>
+            <if test="imageUrl != null">
+                image_url = #{imageUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="categoryId != null">
+                category_id = #{categoryId,jdbcType=BIGINT},
+            </if>
+            <if test="categoryName != null">
+                category_name = #{categoryName,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="itemSn != null">
+                item_sn = #{itemSn,jdbcType=VARCHAR},
+            </if>
+            <if test="costPrice != null">
+                cost_price = #{costPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="marketPrice != null">
+                market_price = #{marketPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="isDefault != null">
+                is_default = #{isDefault,jdbcType=BIT},
+            </if>
+            <if test="goodsId != null">
+                goods_id = #{goodsId,jdbcType=BIGINT},
+            </if>
+            <if test="sellerId != null">
+                seller_id = #{sellerId,jdbcType=VARCHAR},
+            </if>
+            <if test="cartThumbnailUrl != null">
+                cart_thumbnail_url = #{cartThumbnailUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="brandName != null">
+                brand_name = #{brandName,jdbcType=VARCHAR},
+            </if>
+            <if test="specNames != null">
+                spec_names = #{specNames,jdbcType=VARCHAR},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updatedTime != null">
+                updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createdBy != null">
+                created_by = #{createdBy,jdbcType=BIGINT},
+            </if>
+            <if test="updatedBy != null">
+                updated_by = #{updatedBy,jdbcType=BIGINT},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.youxuan.goods.center.entity.Item">
+      update item
+      set title = #{title,jdbcType=VARCHAR},
+        sell_point = #{sellPoint,jdbcType=VARCHAR},
+        price = #{price,jdbcType=DECIMAL},
+        stock_count = #{stockCount,jdbcType=INTEGER},
+        num = #{num,jdbcType=INTEGER},
+        bar_code = #{barCode,jdbcType=VARCHAR},
+        image_url = #{imageUrl,jdbcType=VARCHAR},
+        category_id = #{categoryId,jdbcType=BIGINT},
+        category_name = #{categoryName,jdbcType=VARCHAR},
+        `status` = #{status,jdbcType=INTEGER},
+        item_sn = #{itemSn,jdbcType=VARCHAR},
+        cost_price = #{costPrice,jdbcType=DECIMAL},
+        market_price = #{marketPrice,jdbcType=DECIMAL},
+        is_default = #{isDefault,jdbcType=BIT},
+        goods_id = #{goodsId,jdbcType=BIGINT},
+        seller_id = #{sellerId,jdbcType=VARCHAR},
+        cart_thumbnail_url = #{cartThumbnailUrl,jdbcType=VARCHAR},
+        brand_name = #{brandName,jdbcType=VARCHAR},
+        spec_names = #{specNames,jdbcType=VARCHAR},
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+        created_by = #{createdBy,jdbcType=BIGINT},
+        updated_by = #{updatedBy,jdbcType=BIGINT},
+        is_deleted = #{isDeleted,jdbcType=BIT}
+      where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectAllItemList" resultType="com.youxuan.goods.center.entity.Item">
+        select id, title, price, image_url, category_name, goods_id, seller_id, brand_name
+        from item
+        where is_deleted=0 and status=1;
+    </select>
+
+    <select id="selectItemByGoodsId" resultType="com.youxuan.goods.center.api.result.ItemDetailsDTO">
+        select id as itemId, title, price, spec_names
+        from item
+        where status=1 and is_deleted=0
+        <if test="goodsId != null">
+            and goods_id = #{goodsId}
+        </if>
+    </select>
+
+</mapper>
